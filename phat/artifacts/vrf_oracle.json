@@ -1,6 +1,6 @@
 {
   "source": {
-    "hash": "0x79dd2c44063d9fe243d2819fa8710eb1507cb133fe3f499a1cafa0aa82c0bab9",
+    "hash": "0x9fe1c47f3eedbd712681a33afb1e1a65aa1a76cc6fd41aeac968fe0f5f04c14d",
     "language": "ink! 4.3.0",
     "compiler": "rustc 1.72.0",
     "build_info": {
@@ -15,7 +15,7 @@
   },
   "contract": {
     "name": "vrf_oracle",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "authors": [
       "GuiGou"
     ]
@@ -157,7 +157,7 @@
         "docs": [
           " Set attestor key.",
           "",
-          " For dev purpose."
+          " For dev purpose. (admin only)"
         ],
         "label": "set_attest_key",
         "mutates": true,
@@ -175,7 +175,7 @@
         "args": [],
         "default": false,
         "docs": [
-          " Gets the sender address used by this rollup"
+          " Gets the sender address used by this rollup (in case of meta-transaction)"
         ],
         "label": "get_sender_address",
         "mutates": false,
@@ -193,7 +193,7 @@
         "args": [],
         "default": false,
         "docs": [
-          " Gets the config"
+          " Gets the config of the target consumer contract"
         ],
         "label": "get_target_contract",
         "mutates": false,
@@ -257,7 +257,7 @@
         ],
         "default": false,
         "docs": [
-          " Configures the rollup target (admin only)"
+          " Configures the target consumer contract (admin only)"
         ],
         "label": "config_target_contract",
         "mutates": true,
@@ -274,7 +274,9 @@
       {
         "args": [],
         "default": false,
-        "docs": [],
+        "docs": [
+          " Get the core script"
+        ],
         "label": "get_core_js",
         "mutates": false,
         "payable": false,
@@ -297,20 +299,11 @@
               ],
               "type": 3
             }
-          },
-          {
-            "label": "settings",
-            "type": {
-              "displayName": [
-                "String"
-              ],
-              "type": 3
-            }
           }
         ],
         "default": false,
         "docs": [
-          " Configures the core script (admin only)"
+          " Configures the core js script (admin only)"
         ],
         "label": "config_core_js",
         "mutates": true,
@@ -323,34 +316,6 @@
           "type": 11
         },
         "selector": "0x048eeff5"
-      },
-      {
-        "args": [
-          {
-            "label": "settings",
-            "type": {
-              "displayName": [
-                "String"
-              ],
-              "type": 3
-            }
-          }
-        ],
-        "default": false,
-        "docs": [
-          " Set the configuration (admin only)"
-        ],
-        "label": "config_core_js_settings",
-        "mutates": true,
-        "payable": false,
-        "returnType": {
-          "displayName": [
-            "ink",
-            "MessageResult"
-          ],
-          "type": 11
-        },
-        "selector": "0x348eb731"
       },
       {
         "args": [
@@ -417,10 +382,21 @@
               ],
               "type": 23
             }
+          },
+          {
+            "label": "js_code",
+            "type": {
+              "displayName": [
+                "String"
+              ],
+              "type": 3
+            }
           }
         ],
         "default": false,
-        "docs": [],
+        "docs": [
+          " Simulate and return a random number (for dev purpose)"
+        ],
         "label": "get_random",
         "mutates": false,
         "payable": false,
@@ -585,15 +561,6 @@
                             }
                           },
                           "name": "script"
-                        },
-                        {
-                          "layout": {
-                            "leaf": {
-                              "key": "0x1c5055ba",
-                              "ty": 3
-                            }
-                          },
-                          "name": "settings"
                         },
                         {
                           "layout": {
@@ -1271,11 +1238,6 @@
             "fields": [
               {
                 "name": "script",
-                "type": 3,
-                "typeName": "String"
-              },
-              {
-                "name": "settings",
                 "type": 3,
                 "typeName": "String"
               },
