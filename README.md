@@ -7,6 +7,10 @@ Scenario described here in the communication betwen Ink! Smart Contract on Astar
 
 You can find a demo here: https://vrf-decentralized-oracle.substrate.fi/
 
+The Phat Contract and Ink! Smart Contract have been built with the Phat Offchain Rollup.
+The full documentation of this SDK can be found here: https://github.com/Phala-Network/phat-offchain-rollup
+
+
 ## Phat Contract `VrfOracle`
 
 To deploy this Phat Contract you can build the contract or use existing artifacts
