@@ -1,9 +1,9 @@
 # VrfOracle
 
-This Ink! Phat Contract `VrfOracle` (on Phala Network):
-1) Listens the requests sent by the Ink! Smart Contract (on Astar Network)
+The Phat Contract `VrfOracle`, deployed on Phala Network (or testnet):
+1) Listens the requests from the Smart Contract, deployed on Astar Network (or testnet)
 2) Generates a random value between min and max values
-3) Send the value to the Ink! Smart Contract (on Astar Network)
+3) Sends the value to the Smart Contract, deployed on Astar Network (or testnet)
 
 
 ## Build
