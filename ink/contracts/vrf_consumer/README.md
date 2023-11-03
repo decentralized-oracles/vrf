@@ -1,12 +1,12 @@
 # VRF Consumer
 
-This Ink! Smart Contract `VrfConsumer` (on Astar Network):
+The Smart Contract `VrfConsumer`, deployed on Astar Network (or testnet):
 1) Registers a request to get a random value between min and max values
-2) Sends the request into the message queue that will be consumed by the Phat Contract `VrfOracle` (on Phala Network)
-3) Listens the reply to the Phat Contract `VrfOracle` with the generated random value. The Ink! smart contract checks if the attestor (ie the phat contract) is granted and if the hash of the source code used to compute the random value is correct.
+2) Sends the request into the message queue that will be consumed by the Phat Contract `VrfOracle` deployed on Phala Network (or testnet)
+3) Listens the reply to the Phat Contract `VrfOracle` with the generated random value. The Ink! Smart Contract checks if the attestor (ie the phat contract) is granted and if the hash of the source code used to compute the random value is correct.
 4) Saves the random value to be displayed in the UI.
 
-It uses the crate `phat_rollup_anchor_ink` and supports:
+It uses the crate `phat_rollup_anchor_ink` and supports the following operations:
  - configure the attestor(s) authorized to send the random value. Only an address granted as `MANAGER` can do it.
  - send a request to get a random value between min and max values. All users can do it.
  - handle the messages to provide the random value. Only an address granted as `ATTESTOR` can do it.
