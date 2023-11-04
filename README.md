@@ -94,7 +94,7 @@ You have to register the hash of the source code used to generate the random num
 
 ![get_core_js](https://github.com/GuiGou12358/decentralized_oracle-vrf/assets/92046056/6b9b3d8a-f5d3-4923-8f8f-d6b5ec7690fb)
 
-![set_core_js](https://github.com/GuiGou12358/decentralized_oracle-vrf/assets/92046056/88634faf-e6c3-4b15-9cb2-3daaa965252b)
+![set_core_js](https://github.com/decentralized-oracles/vrf/assets/92046056/22d7e3bc-8082-45a5-a0bc-941f31836316)
 
 ## Test
 
